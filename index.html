@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Shahzeb Ahmed</title>
     <style>
         * {
@@ -12,44 +13,29 @@
     padding: 0;
 }
 
-/* Navigation Bar */
+:root {
+    --navbar-height: 59px;
+}
+
 #navbar {
     display: flex;
+    /* border: 2px solid black; */
     align-items: center;
-}
-
-/* Navigation Bar:LOGO and Images */
-#logo {
-    margin: 10px 34px;
-}
-
-#logo img {
-    height: 59px;
-    margin: 3px 6px;
-}
-
-/* Navigation Bar List Styling */
-
-#navbar {
+    justify-content: center;
+    flex-direction: column;
     position: relative;
+
 }
 
 #navbar ul {
+    text-decoration: none;
     display: flex;
-    font-family: 'Bree Serif, Serif';
-}
-
-#navbar::before {
-    content: "";
-    background-color: black;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.4;
+    font-family: 'Vina Sans', cursive;
 }
 
 #navbar ul li {
+    /* color: white; */
+    margin: 30px;
     list-style: none;
     font-size: 1.3rem;
 }
@@ -57,57 +43,67 @@
 #navbar ul li a {
     color: white;
     display: block;
-    padding: 3px 22px;
+    padding: 2px;
     border-radius: 20px;
     text-decoration: none;
 }
 
-#navbar ul li a:hover {
-    color: black;
-    background-color: white;
+#navbar:before {
+    content: "";
+    background-color: #1f2233;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    /* opacity: 0.7; */
 }
 
-/* HOME SECTION  */
+#navbar ul li a:hover {
+    color: black;
+    background-color: rgb(14, 203, 228);
+}
 
 #home {
     display: flex;
-    flex-direction: column;
-    padding: 3px 200px;
-    height: 400px;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 32px 200px;
+    height: 400px;
+    position: relative;
 }
 
 #home:before {
     content: "";
+    /* background: url(img/mountains.jpg) no-repeat center center/cover; */
+    background-color: #171a27;
     position: absolute;
-    background-image: url('img/picture.jpg');
     height: 100%;
     width: 100%;
     z-index: -1;
-    opacity: 0.89;
+    /* opacity: 0.89; */
 }
 
-/* Utility Classes */
-
-#home h1{
-    color: white;
-    text-align: center;
-    font-family: 'Bree Serif, Serif';
+#home img {
+    height: 234px;
 }
 
-#home p{
-    color: white;
-    text-align: center;
-    font-size: 1.5rem;
-    font-family: 'Bree Serif, Serif';
-}
-.h-primary {
-    font-size: 3.8rem;
+#home h1 {
+    font-size: 42px;
     padding: 12px;
+    text-align: center;
+    color: white;
+    font-family: 'Vina Sans', cursive;
 }
 
-.btn{
+#home p {
+    font-size: 21px;
+    text-align: center;
+    color: white;
+    font-family: 'PT Serif', serif;
+}
+
+.btn {
     padding: 6px 20px;
     border: 2px solid white;
     background-color: brown;
@@ -117,29 +113,102 @@
     border-radius: 10px;
     cursor: pointer;
 }
+
+#about {
+    /* margin-top: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#about img {
+    margin-top: 100px;
+    margin-left: 100px;
+    height: 280px;
+    margin-bottom: 126px;
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    flex-direction: column;
+    margin-left: 80px;
+    margin-bottom: 80px;
+}
+
+#about h2 {
+    color: rgb(245, 221, 10);
+    font-size: 50px;
+}
+
+#about h1 {
+    color: white;
+    font-size: 40px;
+}
+
+#about:before {
+    content: "";
+    /* background: url(img/mountains.jpg) no-repeat center center/cover; */
+    background-color: #1f2233;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    /* opacity: 0.89; */
+}
+
+#about p {
+    margin-top: 10px;
+    color: white;
+    justify-content: center;
+    font-size: 20px;
+    margin-right: 100px;
+}
+
+.btn2 {
+    margin-top: 20px;
+    cursor: pointer;
+}
     </style>
+    
 </head>
 
 <body>
     <nav id="navbar">
         <div id="logo">
-            <img src="img/logo2.png" alt="ShahzebAhmed">
+            <img src="img/logo2.png" alt="Logo">
         </div>
         <ul>
-            <li class="item"><a href="#">Home</a></li>
-            <li class="item"><a href="#">About</a></li>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#about">About</a></li>
+            <li class="item"><a href="#">Portfolio</a></li>
             <li class="item"><a href="#">Resume</a></li>
-            <li class="item"><a href="#">My Skills</a></li>
-            <li class="item"><a href="#">My Life</a></li>
+            <li class="item"><a href="#">Contact Me</a></li>
         </ul>
     </nav>
     <section id="home">
-        <h1 class="h-primary">Shahzeb Ahmed</h1>
-        <P>Front-End Web Developer</P>
-        <p>Freelancer</p>
-        <button class="btn">Hire Me</button>
+        <img src="img/my new pic.PNG" alt="SHAHZEBAHMED.COM" id="MyImage">
+        <h1 class="h-primary">SHAHZEB AHMED</h1>
+        <P>Front-End Web Developer, Freelancer</P>
+        <button class="btn">Contact Me</button>
     </section>
-
+    <section id="about">
+        <img src="img/Capture.PNG" alt="About Me Image">
+        <div class="content">
+            <h2 class="h2-secondary">Discover</h2>
+            <h1 class="h1-secondary">About Me</h1>
+            <p>My name is SHAHZEB AHMED and I am a front-end web developer with over 01 year of experience in the
+                industry. I specialize in creating professional and responsive websites using custom HTML, CSS, and
+                JavaScript code. Additionally, I am proficient in using WordPress to develop and design websites. As a
+                freelancer, I offer my services on Fiverr.com and Upwork.com, where I have worked on several successful
+                projects with satisfied clients. Along with my technical skills, I also have a degree in business, which
+                gives me a unique perspective on creating websites that not only look great but also drive business
+                results.</p>
+            <button class="btn2">DOWNLOAD CV</button>
+        </div>
+    </section>
 </body>
 
 </html>
